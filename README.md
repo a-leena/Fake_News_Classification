@@ -45,7 +45,7 @@ This project explores the problem of classifying news articles as *fake* or *rea
 ### 5. Convolutional Neural Networks (CNNs)
 * CNNs capture **local phrase-level patterns** but cannot model long-term sequential dependencies like LSTMS or Transformers
 * A **1D convolutional kernel of size n** acts as an **n-gram detector**
-* CNNs are tuned to find the best **hyperparamters** (number of layers, filters, kernel sizes, dense layer units, dropout rate, and learning rate)
+* CNNs of different depths are tuned to find the best **hyperparamters** ( filters, kernel sizes, dense layer units, dropout rate, and learning rate)
 > These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models.
 
 ### ⏭️ Next Steps
