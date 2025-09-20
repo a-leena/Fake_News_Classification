@@ -36,9 +36,10 @@ This project explores the problem of classifying news articles as *fake* or *rea
 * A **Word2Vec** model is trained on the training set to obtain **task-specific embeddings**
 * Simple CNN model is used to **tune hyperparameters** (embedding dimension, context window size, maximum input length) efficiently
 * **Result:** 
-    * Embedding dimension = 200
-    * Context window size = 3
+    * Embedding dimension = 500
+    * Context window size = 5
     * Maximum input length = 588 (90th percentile length)
+    * Simple CNN Accuracy = **96.5%**
 > These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models.
 
 ### 5. Convolutional Neural Networks (CNNs)
