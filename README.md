@@ -40,7 +40,7 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Context window size = 5
     * Maximum input length = 588 (90th percentile length)
     * Simple CNN Accuracy = **96.5%**
-> These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models.
+> ✅ These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models.
 
 ### 5. Convolutional Neural Networks (CNNs)
 * CNNs capture **local phrase-level patterns** but cannot model long-term sequential dependencies like LSTMS or Transformers
@@ -51,9 +51,15 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Best tuned model achieved **96.3%** accuracy.
 > 🔍 Classical ML models (linear SVC) performed competitively with deep learning models on this dataset, even narrowly outperforming them. \
 > 🔍 Interestingly, the simple exploratory CNN model (with arbitrarily chosen hyperparameters) used in (4) also slightly outperformed more complex tuned CNNs. Thus, for this dataset, added complexity did not translate to improved performance. \
-> These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models.
+> ✅ These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models.
+
+### 5. Long-Short-Term Memory (LSTM) Models
+* Implemented a single-layer LSTM model with the custom, task-specific embeddings, as a sequential benchmark
+* Initial run (arbitrary hyperparameters) achieved **~95%** accuracy on test set, lower than CNNs and baseline. 
+* Noted significantly higher training time compared to CNNs, even with limited epochs.
+* Hyperparameter tuning is ongoing.
 
 ### ⏭️ Next Steps
-* LSTM and BiLSTM models for capturing sequential dependencies
+* BiLSTM models for capturing sequential dependencies
 * Pretrained embeddings (e.g., GloVe, FastText) for transfer learning
 * Transformer-based architectures (e.g., BERT) for state-of-the-art performance
