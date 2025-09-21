@@ -49,8 +49,8 @@ This project explores the problem of classifying news articles as *fake* or *rea
 * **Results:**
     * CNN models of 3 different depths (1 convolutional layer, 2 layers, and 3 layers) were tuned. CNN model with a single convolutional layer performed the best.
     * Best tuned model achieved **96.3%** accuracy.
-> 🔍 Classical ML models (linear SVC) performed competitively with deep learning models on this dataset, even narrowly outperforming them. \
-> 🔍 Interestingly, the simple exploratory CNN model (with arbitrarily chosen hyperparameters) used in (4) also slightly outperformed more complex tuned CNNs. Thus, for this dataset, added complexity did not translate to improved performance. \
+> 🔍 Classical ML models (linear SVC) performed competitively with deep learning models on this dataset, even narrowly outperforming them. \\
+> 🔍 Interestingly, the simple exploratory CNN model (with arbitrarily chosen hyperparameters) used in (4) also slightly outperformed more complex tuned CNNs. Thus, for this dataset, added complexity did not translate to improved performance. \\
 > These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models.
 
 ### ⏭️ Next Steps
