@@ -29,15 +29,23 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Naive Bayes
     * Linear SVC (Support Vector Classifier)
 * Experiments conducted with and without stylometric features
-* **Result:** Linear SVC with stylometric features performed best, achieving **96.5%** accuracy.
-> ✅ This serves as the **baseline** for comparison with neural network models.
+* **Results:** 
+    * TF-IDF only:
+        - Logistic Regression Accuracy: **94.6%**
+        - Naive Bayes Accuracy: **89.6%**
+        - Linear SVC Accuracy: **96.3%**
+    * TF-IDF + Custom Stylometric features:
+        - Logistic Regression Accuracy: **94.7%**
+        - Naive Bayes Accuracy: **92.1%**
+        - Linear SVC Accuracy: **96.5%**
+> ✅ **Linear SVC** with stylometric features performed best. This serves as the **baseline** for comparison with neural network models.
 
 ### 4. Artificial Neural Network (ANN)
 * ANNs with 3 FCs (fully-connected layers) trained on both TF-IDF features alone and combinations of TF-IDF and the custom stylometrics features
 * L2 Regularization and Dropouts are used
 * **Results**:
-    * Accuracy (TF-IDF only): 
-    * Accuracy (TF-IDF + Stylometric Features):
+    * Accuracy (TF-IDF only): **95.3%**
+    * Accuracy (TF-IDF + Stylometric Features): **95.4%**
     * Very long training time taken
 > 🔍 TF-IDF features are sparse, high-dimensional inputs and neural networks don't work well on them unless we apply dimensionality reduction first.
 
@@ -48,7 +56,6 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Embedding dimension = 500
     * Context window size = 5
     * Maximum input length = 588 (90th percentile length)
-    * Simple CNN Accuracy = **96.5%**
 > ✅ These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models.
 
 ### 6. Convolutional Neural Networks (CNNs)
@@ -80,10 +87,23 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Embeddings `Trainable=False` - Accuracy: **96.3%**
     * Embeddings `Trainable=True` - Accuracy: **~96%**
 
+### 9. Transfer Learning with Pretrained Embeddings
+* Used pretrained GloVe embeddings
+    * Wikipedia + Gigaword 2024
+    * 100D vectors
+* Trained the CNN and GRUs classifiers with fine-tuned embedding layers
+* **Results:**
+    * CNN Accuracy: **95.8%**
+    * GRU Accuracy: **94.8%**
+
 ### Conclusion 
-* Classical ML models (linear SVC) performed competitively with deep learning models on this dataset, even narrowly outperforming them.
-* CNN with fine-tuned, custom embeddings and GRU with frozen, custom embeddings roughly matched the baseline performance but didn't beat it.
+* Classical ML models (Linear SVC), using TF-IDF + custom stylometric features, performed competitively with deep learning models on this dataset, even narrowly outperforming them.
+* CNN with fine-tuned, custom Word2Vec embeddings and GRU with frozen, custom Word2Vec embeddings roughly matched the baseline performance but didn't beat it.
+* Pretrained embeddings underperformed compared to custom Word2Vec embeddings, likely due to domain mismatch (news-specific language vs. general-purpose embeddings), and also because GloVe vectors were 100D compared to the 500D Word2Vec vectors.
+
+### Summary of Model Comparison
+![Model Comparison](model_comparison.png)
+
 
 ### ⏭️ Next Steps
-* Pretrained embeddings (e.g., GloVe, FastText) for transfer learning
 * Transformer-based architectures (e.g., BERT) for state-of-the-art performance
