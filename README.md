@@ -69,16 +69,16 @@ This project explores the problem of classifying news articles as *fake* or *rea
 * Noted significantly higher training time compared to CNNs, even with limited epochs
 * Initial runs (with arbitrary hyperparameters) done with frozen and unfrozen embeddings
 * **Results:**
-    * Embeddings Trainable=False - Accuracy: **~95.5%**
-    * Embeddings Trainable=True - Accuracy: **93.5%**
+    * Embeddings `Trainable=False` - Accuracy: **~95.5%**
+    * Embeddings `Trainable=True` - Accuracy: **93.5%**
 
 ### 8. Gated Recurrent Unit (GRU) Models
 * Implemented a GRU model using the custom, task-specific embeddings, as a sequential benchmark
 * Noted faster training compared to LSTMs
 * Initial runs (with arbitrary hyperparameters - *same as those used in LSTM model*) done with frozen and unfrozen embeddings
 * **Results:**
-    * Embeddings Trainable=False - Accuracy: **96.3%**
-    * Embeddings Trainable=True - Accuracy: **~96%**
+    * Embeddings `Trainable=False` - Accuracy: **96.3%**
+    * Embeddings `Trainable=True` - Accuracy: **~96%**
 
 ### Conclusion 
 * Classical ML models (linear SVC) performed competitively with deep learning models on this dataset, even narrowly outperforming them.
